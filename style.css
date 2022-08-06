@@ -6,13 +6,48 @@
   outline: none;
   border: none;
   text-decoration: none;
+  list-style: none;
+}
+::selection{
+	background: #444;
+    color: #fff;
 }
 body{
 	line-height: 24px;
 }
-
-h2{
-	line-height: 48px;
+h1, h2, h3, h4, h5, h6{
+	line-height: 1.2;
+}
+img{
+	user-select: none;
+	line-height: 0;
+}
+a, button{
+	user-select: none;
+}
+.heading{
+	font-size: 38px;
+	color: #1A2224;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.btn{
+	padding: 18px 45px;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #335aff;
+    color: #fff;
+    transition: .25s ease-in-out;
+}
+.btn:hover{
+	background: #fff;
+    color: #335AFF;
+    border: 2px solid #335AFF;
 }
 section{
 	padding: 3rem;
@@ -26,10 +61,515 @@ section{
 	section{
 		padding: 3rem 1rem;
 	}
-}
-.container{
+	.btn{
+		padding: 10px 25px;
+	}
 }
 
+/* ---------- bagian header-top ---------- */
+.header-top{
+	padding: 0 3rem;
+	background: #fcfcfc;
+}
+.header-top .container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px 0;
+}
+.header-top .container .left,
+.header-top .container .right{
+	display: flex;
+	gap: 0 2rem;
+}
+.header-top .container .left > a{
+	font-size: 14px;
+}
+.header-top .container .left > a:hover > *{
+	color: #18c294;
+}
+.header-top .container .left > a > i{
+	color: #333;
+	padding-right: 4px;
+}
+.header-top .container .left > a > span{
+	color: #989BA7;
+}
+.header-top .container .right select{
+	background: none;
+}
+.header-top .container .right .bahasa,
+.header-top .container .right .mata-uang{
+	color: #989ba7;
+	cursor: pointer;
+	font-size: 14px;
+}
+@media(max-width: 768px){
+	.header-top{
+		padding: 0 2rem;
+	}
+	.header-top .container .left,
+	.header-top .container .right{
+		gap: 0 1rem;
+	}
+	.header-top .container .left > a > span{
+		display: none;
+	}
+}
+@media(max-width: 480px){
+	.header-top{
+		padding: 0 1rem;
+	}
+}
+
+/* ---------- bagian header ---------- */
+.header{
+	padding: 0 3rem;
+	width: 100%;
+	transition: .3s;
+}
+.header.sticky{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #fcfcfc;
+	box-shadow: 0 0 10px 3px rgb(0,0,0,.1);
+	z-index: 9998;
+}
+.header .container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	padding: 8px 0;
+	overflow: hidden;
+}
+.header .container .logo img{
+	height: 48px;
+	width: 48px;
+}
+.header .container .navbar a{
+	color: #989ba7;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 10px;
+}
+.header .container .navbar a:hover{
+	color: #335aff;
+}
+.header .container .navbar .close-menu{
+	display: none;
+}
+.header .container .nav-icon{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 0 1rem;
+}
+.header .container .nav-icon a{
+	color: #c14795;
+}
+.header .container .nav-icon a:hover{
+	color: #333;
+}
+.header .container .nav-icon .open-menu{
+	display: none;
+}
+@media(max-width: 800px){
+	.header .container .nav-icon .open-menu{
+		display: block;
+	}
+	.header .container .navbar{
+	    position: fixed;
+	    top: 0;
+	    right: -100%;
+		width: 450px;
+		height: 100vh;
+		padding: 1rem;
+	    background: #FCFCFC;
+	    transition: 0.5s;
+	    z-index: 9999;
+	}
+	.header .container .navbar a{
+		display: block;
+		font-size: 1rem;
+	}
+	.header .container .navbar a.close-menu{
+		text-align: right;
+		font-size: 20px;
+		color: #333;
+	}
+	.header .container .navbar a.close-menu:hover{
+		color: #335aff;
+	}
+	.header .container .navbar.aktif{
+	    right: 0;
+	}
+	.header .container .navbar .close-menu{
+		display: block;
+	}
+}
+@media(max-width: 768px){
+	.header{padding: 0 2rem;
+	}
+}
+@media(max-width: 480px){
+	.header{padding: 0 1rem;
+	}
+	.header .container .navbar{
+		width: 100vw;
+	}
+}
+
+/* ---------- bagian banner ---------- */
+.banner .container{
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.banner .container .box{
+	width: calc(100% / 2);
+}
+.banner .container .box.satu h2{
+	font-size: 50px;
+    line-height: 58px;
+}
+.banner .container .box.satu p{
+	color: #989BA7;
+	margin: 2rem 0;
+}
+.banner .container .box.dua img{
+	width: 100%;
+	height: 100%;
+	border-radius: 60px 8px 8px 8px;
+}
+@media(max-width: 800px){
+	.banner .container{
+		flex-direction: column-reverse;
+	}
+	.banner .container .box{
+		width: 100%;
+	}
+}
+
+/* ---------- bagian klien ---------- */
+.clients .slide img {
+  width: 100%;
+  height: 100%;
+  opacity: .35;
+}
+
+/* ---------- bagian features ---------- */
+.features{
+	background: #f9f9f9;
+}
+.features .swiper .swiper-wrapper .swiper-slide{
+	border-radius: 12px;
+	user-select: none;
+	position: relative;
+}
+.features .swiper .swiper-wrapper .swiper-slide img{
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+}
+.features .swiper .swiper-wrapper .swiper-slide a{
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 8px;
+	color: #1A2224;
+}
+.features .swiper .swiper-wrapper .swiper-slide a:hover{
+	color: #18c294;
+}
+.features .swiper .swiper-wrapper .swiper-slide p{
+	color: #1A2224;
+}
+.features .swiper .swiper-wrapper .swiper-slide p span{
+	color: #989BA7;
+	text-decoration: line-through;
+	margin-left: 8px;
+}
+.features .swiper .swiper-wrapper .swiper-slide .icon{
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.features .swiper .swiper-wrapper .swiper-slide .icon a{
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.features > div:last-child{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 3rem;
+}
+.features > div:last-child .btn{
+	background: rgba(51, 90, 255, 0.04);
+	color: #335aff;
+}
+.features > div:last-child .btn:hover{
+	background: #335aff;
+	color: #fff;
+}
+
+/* ---------- bagian about ---------- */
+.about .container{
+	display: flex;
+	justify-content: space-evenly;
+	gap: 2rem;
+}
+.about .container .box{
+	width: calc(100% / 2);
+}
+.about .container .box:first-child img{
+	width: 100%;
+	height: 100%;
+	border-radius: 86px 24px 0 24px;
+}
+.about .container .box:last-child{
+	display: flex;
+	flex-direction: column;
+}
+.about .container .box:last-child > *{
+	margin-bottom: 1rem;
+}
+.about .container .box:last-child h3{
+	font-size: 45px;
+	color: #1A2224;
+}
+.about .container .box:last-child p{
+	color: #989BA7;
+}
+.about .container .box:last-child div > p{
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+}
+.about .container .box:last-child div > p > i{
+	color: #18c294;
+	border: 2px solid #18c294;
+	padding: 4px;
+	border-radius: 50%;
+}
+.about .container .box:last-child div > p > span{
+	color: #1A2224;
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 8px;
+}
+.about .container .box:last-child .btn{
+	width: max-content;
+}
+@media(max-width: 800px){
+	.about .container{
+		flex-direction: column;
+	}
+	.about .container .box{
+		width: 100%;
+	}
+}
+
+/* ---------- bagian popular ---------- */
+.popular{
+	background: #f9f9f9;
+}
+.popular .container{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+}
+.popular .container .box{
+	position: relative;
+}
+.popular .container .box > *{
+	margin-bottom: 8px;
+}
+.popular .container .box > div{
+	width: 100%;
+	border-radius: 12px;
+	overflow: hidden;
+}
+.popular .container .box > div > img{
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	transition: .3s;
+}
+.popular .container .box > div:hover img{
+	transform: scale(1.25);
+}
+.popular .container .box a{
+	font-size: 18px;
+	font-weight: 600;
+    color: #1A2224;
+}
+.popular .container .box a:hover{
+	color: #18c294;
+}
+.popular .container .box p{
+    font-weight: 400;
+    color: #1A2224;
+}
+.popular .container .box p span{
+	text-decoration: line-through;
+	color: #989BA7;
+	margin-left: 8px;
+}
+.popular .container .box .icon{
+	position: absolute;
+	top: 1rem;
+	display: flex;
+	justify-content: flex-end;
+	gap: 0 8px;
+	padding-right: 16px;
+}
+.popular .container .box .icon a{
+	width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popular .container .box .icon a:hover{
+	color: #18c294;
+}
+@media(max-width: 800px){
+	.popular .container{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media(max-width: 500px){
+	.popular .container{
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+/* ---------- bagian categorys ---------- */
+.categorys .container{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1.25rem;
+}
+.categorys .container .box{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+.categorys .container .box > a{
+	width: 100%;
+	height: 100%;
+}
+.categorys .container .box > a > img{
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	display: block;
+	margin: auto;
+	transition: .3s;
+}
+.categorys .container .box > a:hover img{
+	transform: scale(1.15);
+}
+.categorys .container .box > .title{
+	color: #1A2224;
+    font-size: 20px;
+    margin: 1rem 0 8px;
+/*    batasi panjang judul dgn lebar sesuai wadah & tinggi hanya 48px*/
+	max-height: 48px;
+	overflow: hidden;
+}
+.categorys .container .box > .title:hover{
+	color: #18c294;
+}
+.categorys .container .box > p{
+	color: #989BA7;
+    font-size: 14px;
+}
+.categorys > div:last-child{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.categorys > div:last-child .btn{
+	background: rgba(51, 90, 255, 0.04);
+    color: #335aff;
+}
+.categorys > div:last-child .btn:hover{
+	background: #335aff;
+    color: #fff;
+}
+@media(max-width: 800px){
+	.categorys .container{
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media(max-width: 600px){
+	.categorys .container{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media(max-width: 400px){
+	.categorys .container{
+		grid-template-columns: repeat(1, 1fr);
+	}
+/*	.categorys .container .box > .title{
+		max-height: auto;
+		height: auto;
+	}*/
+}
+
+/* ---------- bagian review ---------- */
+.review{
+	background: #f9f9f9;
+}
+.review .review-slider{
+	text-align: center;
+}
+.review .review-slider .swiper-wrapper{
+	user-select: none;
+}
+.review .review-slider .swiper-wrapper .swiper-slide{
+	border: 1px solid #EFEFEF;
+    border-radius: 4px;
+    padding: 1rem;
+}
+.review .review-slider .swiper-wrapper .swiper-slide p,
+.review .review-slider .swiper-wrapper .swiper-slide span{
+	color: #989BA7;
+}
+.review .review-slider .swiper-wrapper .swiper-slide h4{
+	color: #1A2224;
+    font-size: 18px;
+    margin: 1rem 0 8px;
+}
+.review .review-slider .swiper-wrapper .swiper-slide span{
+	font-size: 14px;
+	font-style: italic;
+}
+.review .review-slider .swiper-button-next,
+.review .review-slider .swiper-button-prev{
+	color: #989BA7;
+}
+.review .review-slider .swiper-button-next:hover,
+.review .review-slider .swiper-button-prev:hover{
+	color: #335aff;
+}
 /* ---------- bagian subscribe ---------- */
 .subscribe{
 	background: #1a2224;
@@ -85,7 +625,7 @@ section{
 @media(max-width: 768px){
 	.subscribe .container{
 		flex-direction: column;
-		gap: 2rem;
+		gap: 1.5rem;
 	}
 	.subscribe .container > div{
 		width: 100%;
@@ -104,6 +644,9 @@ section{
   	gap: 2rem;
   	padding: 4rem 0;
   	border-top: 1px solid #fff;
+}
+.footer .container .box{
+	padding: 1rem;
 }
 .footer .container .box:first-child img{
 	margin: 1rem auto;
